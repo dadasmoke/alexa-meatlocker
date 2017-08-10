@@ -1,7 +1,7 @@
 'use strict';
 
 var Alexa = require('alexa-sdk');
-var APP_ID = undefined; // TODO replace with your app ID (OPTIONAL).
+var APP_ID = 'amzn1.ask.skill.620e2bb8-92f2-4194-83b4-1c296698e81c';
 var recipes = require('./recipes');
 
 exports.handler = function(event, context, callback) {
