@@ -9,97 +9,18 @@
       "samples": []
     },
     {
-      "name": "AMAZON.RepeatIntent",
-      "samples": []
-    },
-    {
       "name": "AMAZON.StopIntent",
       "samples": []
     },
     {
       "name": "CookingIntent",
       "samples": [
-        "what is the cooking temperature of {Item}",
-        "at what temperature should I cook {Item}"
+        "What is the cooking temperature of {Item}"
       ],
       "slots": [
         {
           "name": "Item",
           "type": "LIST_OF_ITEMS",
-          "samples": []
-        }
-      ]
-    },
-    {
-      "name": "CookTimeIntent",
-      "samples": [
-        "How long to cook {Item}",
-        "How long to cook a {Unit} {Item}"
-      ],
-      "slots": [
-        {
-          "name": "item",
-          "type": "LIST_OF_ITEMS",
-          "samples": []
-        },
-        {
-          "name": "Unit",
-          "type": "LIST_OF_UNITS",
-          "samples": [
-            "{weight}"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "PartIntent",
-      "samples": [
-        "What is {Part} of {Item}",
-        "What are the parts of {Item}"
-      ],
-      "slots": [
-        {
-          "name": "Item",
-          "type": "LIST_OF_ITEMS",
-          "samples": []
-        },
-        {
-          "name": "Part",
-          "type": "LIST_OF_PARTS",
-          "samples": []
-        }
-      ]
-    },
-    {
-      "name": "RecipeIntent",
-      "samples": [
-        "What is the finishing temperature of {Item}",
-        "When is {Item} done",
-        "How Do I know {Item} is finished",
-        "When is {Item} finished"
-      ],
-      "slots": [
-        {
-          "name": "Item",
-          "type": "LIST_OF_ITEMS",
-          "samples": []
-        }
-      ]
-    },
-    {
-      "name": "VocabIntent",
-      "samples": [
-        "What is {Item}"
-      ],
-      "slots": [
-        {
-          "name": "Item",
-          "type": "LIST_OF_ITEMS",
-          "samples": []
-        },
-        {
-          "name": "Part",
-          "type": "LIST_OF_PARTS",
           "samples": []
         }
       ]
@@ -289,66 +210,5 @@
         }
       ]
     }
-  ],
-  "prompts": [
-    {
-      "id": "Elicit.Intent-CookTimeIntent.IntentSlot-Item",
-      "promptVersion": "1.0",
-      "definitionVersion": "1.0",
-      "variations": [
-        {
-          "type": "PlainText",
-          "value": "How much does {Item} weigh"
-        }
-      ]
-    },
-    {
-      "id": "Elicit.Intent-CookTimeIntent.IntentSlot-Unit",
-      "promptVersion": "1.0",
-      "definitionVersion": "1.0",
-      "variations": [
-        {
-          "type": "PlainText",
-          "value": "How much does {Item} weigh"
-        }
-      ]
-    }
-  ],
-  "dialog": {
-    "version": "1.0",
-    "intents": [
-      {
-        "name": "CookTimeIntent",
-        "confirmationRequired": false,
-        "prompts": {},
-        "slots": [
-          {
-            "name": "Item",
-            "type": "LIST_OF_ITEMS",
-            "elicitationRequired": true,
-            "confirmationRequired": false,
-            "prompts": {
-              "elicit": "Elicit.Intent-CookTimeIntent.IntentSlot-Item"
-            }
-          },
-          {
-            "name": "Unit",
-            "type": "LIST_OF_UNITS",
-            "elicitationRequired": true,
-            "confirmationRequired": false,
-            "prompts": {
-              "elicit": "Elicit.Intent-CookTimeIntent.IntentSlot-Unit"
-            }
-          },
-          {
-            "name": "weight",
-            "type": "LIST_OF_UNITS",
-            "elicitationRequired": false,
-            "confirmationRequired": false,
-            "prompts": {}
-          }
-        ]
-      }
-    ]
-  }
+  ]
 }
