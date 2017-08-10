@@ -19,7 +19,8 @@
     {
       "name": "CookingIntent",
       "samples": [
-        "What is the cooking temperature of {Item}"
+        "what is the cooking temperature of {Item}",
+        "at what temperature should I cook {Item}"
       ],
       "slots": [
         {
@@ -32,15 +33,14 @@
     {
       "name": "CookTimeIntent",
       "samples": [
-        "How long to cook {Item}"
+        "How long to cook {Item}",
+        "How long to cook a {Unit} {Item}"
       ],
       "slots": [
         {
-          "name": "Item",
+          "name": "item",
           "type": "LIST_OF_ITEMS",
-          "samples": [
-            "{weight}"
-          ]
+          "samples": []
         },
         {
           "name": "Unit",
@@ -48,11 +48,6 @@
           "samples": [
             "{weight}"
           ]
-        },
-        {
-          "name": "weight",
-          "type": "LIST_OF_UNITS",
-          "samples": []
         }
       ]
     },
