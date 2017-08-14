@@ -24,6 +24,23 @@
           "samples": []
         }
       ]
+    },
+    {
+      "name": "CookTimeIntent",
+      "samples": [
+        "How long to cook {Item}",
+        "What length of time should I cook {Item}"
+      ],
+      "slots": [
+        {
+          "name": "Item",
+          "type": "LIST_OF_ITEMS",
+          "samples": [
+            "{Item}",
+            "I'm cooking {Item}"
+          ]
+        }
+      ]
     }
   ],
   "types": [
@@ -210,5 +227,39 @@
         }
       ]
     }
-  ]
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-CookTimeIntent.IntentSlot-Item",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What type of meat?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "CookTimeIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Item",
+            "type": "LIST_OF_ITEMS",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-CookTimeIntent.IntentSlot-Item"
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
